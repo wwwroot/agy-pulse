@@ -1,0 +1,33 @@
+{
+  "agy-pulse-session-bind": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node -e \"import('node:fs').then(async fs=>{const path=await import('node:path');const os=await import('node:os');const url=await import('node:url');const geminiHome=process.env.GEMINI_HOME||path.join(os.homedir(),'.gemini');const bases=[process.env.PLUGIN_ROOT,process.env.AGY_PLUGIN_ROOT,path.join(geminiHome,'config','plugins','agy-pulse'),path.join(process.cwd(),'.agents','plugins','agy-pulse'),process.cwd()].filter(Boolean);for(const b of bases){const f=path.join(b,'sidecars','pulse','dist','hook-session.mjs');if(fs.existsSync(f)){await import(url.pathToFileURL(f).href);return;}}process.stdout.write('{}\\n');}).catch(()=>{process.stdout.write('{}\\n');});\"",
+        "timeout": 5
+      }
+    ],
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "node -e \"import('node:fs').then(async fs=>{const path=await import('node:path');const os=await import('node:os');const url=await import('node:url');const geminiHome=process.env.GEMINI_HOME||path.join(os.homedir(),'.gemini');const bases=[process.env.PLUGIN_ROOT,process.env.AGY_PLUGIN_ROOT,path.join(geminiHome,'config','plugins','agy-pulse'),path.join(process.cwd(),'.agents','plugins','agy-pulse'),process.cwd()].filter(Boolean);for(const b of bases){const f=path.join(b,'sidecars','pulse','dist','hook-session.mjs');if(fs.existsSync(f)){await import(url.pathToFileURL(f).href);return;}}process.stdout.write('{}\\n');}).catch(()=>{process.stdout.write('{}\\n');});\"",
+        "timeout": 5
+      }
+    ]
+  },
+  "agy-pulse-tool-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "run_command|read_file|view_file|edit_file|write_file|replace_file_content|multi_replace_file_content|write_to_file|swarm",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"import('node:fs').then(async fs=>{const path=await import('node:path');const os=await import('node:os');const url=await import('node:url');const geminiHome=process.env.GEMINI_HOME||path.join(os.homedir(),'.gemini');const bases=[process.env.PLUGIN_ROOT,process.env.AGY_PLUGIN_ROOT,path.join(geminiHome,'config','plugins','agy-pulse'),path.join(process.cwd(),'.agents','plugins','agy-pulse'),process.cwd()].filter(Boolean);for(const b of bases){const f=path.join(b,'sidecars','pulse','dist','hook-session.mjs');if(fs.existsSync(f)){process.env.AGY_PULSE_HOOK_MODE='pretool-guard';await import(url.pathToFileURL(f).href);return;}}process.stdout.write(JSON.stringify({decision:'allow'})+'\\n');}).catch(()=>{process.stdout.write(JSON.stringify({decision:'allow'})+'\\n');});\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

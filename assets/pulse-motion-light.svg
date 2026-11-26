@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="920" height="220" fill="none" role="img" aria-label="agy-pulse architecture: parallel reads, deduplication, search, and shell compression processed by the Rust worker into inline MCP payloads and live telemetry">
+  <defs>
+    <pattern id="dotGridLight" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.75" fill="#E4E4E7"/>
+    </pattern>
+
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace; }
+
+      .traceInFast {
+        stroke-dasharray: 4 14;
+        animation: flow18 1.3s linear infinite;
+      }
+      .traceInSlow {
+        stroke-dasharray: 3 15;
+        animation: flow18 1.8s linear infinite;
+      }
+      .traceOut {
+        stroke-dasharray: 6 14;
+        animation: flow20 1.2s linear infinite;
+      }
+      .wavePacket {
+        stroke-dasharray: 28 72;
+        animation: flow100 2.0s linear infinite;
+      }
+      .coreTick {
+        animation: subtlePulse 2.4s ease-in-out infinite;
+      }
+
+      @keyframes flow18 {
+        from { stroke-dashoffset: 18; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes flow20 {
+        from { stroke-dashoffset: 20; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes flow100 {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes subtlePulse {
+        0%, 100% { opacity: 0.45; }
+        50% { opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .traceInFast, .traceInSlow, .traceOut, .wavePacket, .coreTick {
+          animation: none;
+          stroke-dashoffset: 0;
+          opacity: 0.85;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect x="0.5" y="0.5" width="919" height="219" rx="10" fill="#FAFAFA" stroke="#E4E4E7"/>
+  <rect x="1" y="1" width="918" height="218" rx="9.5" fill="url(#dotGridLight)"/>
+
+  <!-- Signal traces: Left -> Center -->
+  <g stroke="#E4E4E7" stroke-width="1">
+    <path d="M 244 41 C 292 41, 298 84, 346 84"/>
+    <path d="M 244 87 C 290 87, 300 101, 346 101"/>
+    <path d="M 244 133 C 290 133, 300 119, 346 119"/>
+    <path d="M 244 179 C 292 179, 298 136, 346 136"/>
+  </g>
+  <g stroke="#52525B" stroke-width="1.25" stroke-linecap="round">
+    <path class="traceInFast" d="M 244 41 C 292 41, 298 84, 346 84"/>
+    <path class="traceInSlow" d="M 244 87 C 290 87, 300 101, 346 101"/>
+    <path class="traceInFast" d="M 244 133 C 290 133, 300 119, 346 119"/>
+    <path class="traceInSlow" d="M 244 179 C 292 179, 298 136, 346 136"/>
+  </g>
+
+  <!-- Signal traces: Center -> Right -->
+  <g stroke="#E4E4E7" stroke-width="1">
+    <path d="M 574 92 C 620 92, 626 68, 672 68"/>
+    <path d="M 574 128 C 620 128, 626 156, 672 156"/>
+  </g>
+  <g stroke="#18181B" stroke-width="1.4" stroke-linecap="round">
+    <path class="traceOut" d="M 574 92 C 620 92, 626 68, 672 68"/>
+    <path class="traceOut" d="M 574 128 C 620 128, 626 156, 672 156"/>
+  </g>
+
+  <!-- Left column: 4 compact input blocks -->
+  <g>
+    <rect x="24" y="24" width="220" height="34" rx="5" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <text x="36" y="45" class="sans" font-size="11.5" font-weight="600" fill="#18181B">Outlines &amp; symbols</text>
+    <text x="232" y="45" class="mono" font-size="10.5" font-weight="600" fill="#3F3F46" text-anchor="end">-96.7%</text>
+  </g>
+
+  <g>
+    <rect x="24" y="70" width="220" height="34" rx="5" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <text x="36" y="91" class="sans" font-size="11.5" font-weight="600" fill="#18181B">Read deduplication</text>
+    <text x="232" y="91" class="mono" font-size="10.5" font-weight="600" fill="#3F3F46" text-anchor="end">-90.2%</text>
+  </g>
+
+  <g>
+    <rect x="24" y="116" width="220" height="34" rx="5" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <text x="36" y="137" class="sans" font-size="11.5" font-weight="600" fill="#18181B">Search &amp; git</text>
+    <text x="232" y="137" class="mono" font-size="10.5" font-weight="600" fill="#3F3F46" text-anchor="end">-76.9%</text>
+  </g>
+
+  <g>
+    <rect x="24" y="162" width="220" height="34" rx="5" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <text x="36" y="183" class="sans" font-size="11.5" font-weight="600" fill="#18181B">Exec, JSON &amp; docs</text>
+    <text x="232" y="183" class="mono" font-size="10.5" font-weight="600" fill="#3F3F46" text-anchor="end">-70.3%</text>
+  </g>
+
+  <!-- Center block: agy-pulse-worker core -->
+  <g>
+    <rect x="346" y="34" width="228" height="152" rx="6" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1.2"/>
+    <line x1="346" y1="66" x2="574" y2="66" stroke="#E4E4E7"/>
+    <text x="360" y="54" class="mono" font-size="11" font-weight="600" fill="#09090B">agy-pulse-worker</text>
+    <rect x="515" y="43" width="46" height="15" rx="3" fill="#F4F4F5" stroke="#D4D4D8"/>
+    <text x="538" y="53.5" class="mono" font-size="8.5" fill="#3F3F46" text-anchor="middle">RUST</text>
+
+    <!-- Waveform scope window -->
+    <rect x="360" y="78" width="200" height="66" rx="4" fill="#F4F4F5" stroke="#E4E4E7"/>
+    <line x1="360" y1="111" x2="560" y2="111" stroke="#E4E4E7" stroke-dasharray="2 3"/>
+    <line x1="410" y1="78" x2="410" y2="144" stroke="#E4E4E7"/>
+    <line x1="460" y1="78" x2="460" y2="144" stroke="#E4E4E7"/>
+    <line x1="510" y1="78" x2="510" y2="144" stroke="#E4E4E7"/>
+
+    <!-- Baseline waveform + continuous smooth packet -->
+    <path d="M 368 111 L 418 111 L 428 111 L 436 93 L 444 127 L 453 89 L 462 121 L 470 111 L 552 111" stroke="#D4D4D8" stroke-width="1.2" stroke-linejoin="round"/>
+    <path class="wavePacket" pathLength="100" d="M 368 111 L 418 111 L 428 111 L 436 93 L 444 127 L 453 89 L 462 121 L 470 111 L 552 111" stroke="#EA580C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="460" y="168" class="mono" font-size="9.5" fill="#52525B" text-anchor="middle">8x mux · sandbox · disk spill</text>
+
+    <!-- Port ticks -->
+    <circle class="coreTick" cx="346" cy="84" r="2" fill="#18181B"/>
+    <circle class="coreTick" cx="346" cy="101" r="2" fill="#71717A"/>
+    <circle class="coreTick" cx="346" cy="119" r="2" fill="#71717A"/>
+    <circle class="coreTick" cx="346" cy="136" r="2" fill="#18181B"/>
+    <circle class="coreTick" cx="574" cy="92" r="2.2" fill="#18181B"/>
+    <circle class="coreTick" cx="574" cy="128" r="2.2" fill="#18181B"/>
+  </g>
+
+  <!-- Right column: 2 output blocks -->
+  <g>
+    <rect x="672" y="24" width="224" height="88" rx="5" fill="#FFFFFF" stroke="#D4D4D8"/>
+    <text x="686" y="45" class="mono" font-size="9.5" fill="#71717A" letter-spacing="0.06em">INLINE BUDGET</text>
+    <text x="686" y="76" class="sans" font-size="24" font-weight="700" fill="#09090B">-92.8%</text>
+    <text x="774" y="76" class="mono" font-size="10.5" fill="#52525B">payload</text>
+    <text x="686" y="97" class="mono" font-size="9.5" fill="#52525B">9.4 KB cap · 17 -&gt; 10 trips</text>
+  </g>
+
+  <g>
+    <rect x="672" y="124" width="224" height="72" rx="5" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <text x="686" y="145" class="mono" font-size="9.5" fill="#71717A" letter-spacing="0.06em">SIDECAR</text>
+    <text x="686" y="167" class="sans" font-size="12" font-weight="600" fill="#18181B">Context · Cost · Quotas</text>
+    <text x="686" y="183" class="mono" font-size="9.5" fill="#52525B">per-chat &amp; workspace scope</text>
+  </g>
+</svg>

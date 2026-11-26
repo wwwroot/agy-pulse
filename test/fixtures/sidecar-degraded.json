@@ -1,0 +1,186 @@
+{
+  "__now": 1700000120000,
+  "snapshotVersion": 1,
+  "seq": 19,
+  "workspaceRoots": [
+    "C:\\projects\\agy-pulse",
+    "C:\\projects\\companion-plugin"
+  ],
+  "primaryWorkspaceRoot": "C:\\projects\\agy-pulse",
+  "platform": "win32",
+  "daemonVersion": "1.0.0",
+  "workerAvailable": false,
+  "workerPath": "C:\\projects\\agy-pulse\\sidecars\\pulse\\dist\\agy-pulse-worker.exe",
+  "sessionId": "conv-degraded-03",
+  "sessionScope": "conversation",
+  "sessions": [],
+  "unreadAnomalies": 2,
+  "dedupEntryCount": 3,
+  "config": {
+    "defaultShell": "auto",
+    "defaultTimeoutMs": 30000,
+    "maxTimeoutMs": 165000,
+    "maxInlineBytes": 7800,
+    "maxSpillBytes": 10485760,
+    "autoPromoteOnTimeout": true,
+    "enableReadDedup": true,
+    "enableJsonDigest": true,
+    "enableCredentialFence": true,
+    "enableDownloadGuard": true,
+    "downloadGuardTemplate": "aria2c -x 8 -o {file} {url}",
+    "spillRetentionDays": 7,
+    "spillMaxTotalMb": 256,
+    "sessionRetentionDays": 14,
+    "sessionMaxCount": 30
+  },
+  "shells": [
+    {
+      "id": "pwsh",
+      "label": "PowerShell 7",
+      "executable": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "version": "7.5.0",
+      "available": true,
+      "isDefault": true
+    },
+    {
+      "id": "wsl",
+      "label": "WSL Bash",
+      "executable": "wsl.exe",
+      "available": false
+    }
+  ],
+  "contextWindow": {
+    "available": true,
+    "conversationId": "conv-degraded-03",
+    "model": "gemini-3-pro",
+    "modelLabel": "Gemini 3 Pro",
+    "contextTokens": 42000,
+    "promptTokens": 40800,
+    "uncachedInputTokens": 12800,
+    "cacheReadTokens": 28000,
+    "lastOutputTokens": 1200,
+    "cacheHitPct": 69,
+    "contextLimit": 1000000,
+    "limitEstimated": true,
+    "usagePct": 4.2,
+    "remainingTokens": 958000,
+    "peakContextTokens": 42000,
+    "totalOutputTokens": 4800,
+    "turnCount": 4,
+    "lastTurnDeltaTokens": 9500,
+    "updatedAt": 1699999700000,
+    "timeline": [
+      { "turn": 1, "contextTokens": 14000, "cacheReadTokens": 8000, "outputTokens": 1100, "ts": 1699999100000 },
+      { "turn": 4, "contextTokens": 42000, "cacheReadTokens": 28000, "outputTokens": 1200, "ts": 1699999700000 }
+    ]
+  },
+  "quotas": {
+    "provider": "antigravity",
+    "fetchedAt": 1699999800000,
+    "source": "none",
+    "error": "agy /usage timed out after 25s; local language_server not found.",
+    "warnings": ["Check that Antigravity is signed in and running."],
+    "pools": []
+  },
+  "hostHealth": {
+    "checkedAt": 1700000000000,
+    "warnings": [],
+    "entries": [
+      {
+        "host": "Antigravity",
+        "configPath": "C:\\Users\\developer\\.gemini\\config\\mcp_config.json",
+        "status": "stale",
+        "detail": "Registered server path does not exist on disk",
+        "timeoutSeconds": 60,
+        "commandPath": "C:\\old\\mcp-server.mjs",
+        "repairable": true
+      }
+    ]
+  },
+  "notices": [
+    {
+      "id": "worker:offline",
+      "level": "warn",
+      "title": "Rust worker unavailable",
+      "detail": "Run npm run build to compile native/agy-pulse-worker.",
+      "action": "retry-worker"
+    },
+    {
+      "id": "host:stale:antigravity",
+      "level": "error",
+      "title": "Antigravity MCP config is stale",
+      "detail": "Path mismatch in ~/.gemini/config/mcp_config.json",
+      "action": "repair-host"
+    },
+    {
+      "id": "quota:probe:failed",
+      "level": "info",
+      "title": "Quota probe unavailable",
+      "detail": "Antigravity CLI timed out; retry once signed in.",
+      "action": "refresh-quotas"
+    }
+  ],
+  "telemetry": {
+    "totalCalls": 5,
+    "totalRawBytes": 84000,
+    "totalDeliveredBytes": 39000,
+    "totalSavedBytes": 45000,
+    "estimatedTokensSaved": 11250,
+    "roundTripsSaved": 1,
+    "dedupHits": 2,
+    "avgDurationMs": 145,
+    "byCategory": {
+      "read-dedup": { "calls": 2, "savedBytes": 28000, "estimatedTokensSaved": 7000 },
+      "outline-read": { "calls": 1, "savedBytes": 17000, "estimatedTokensSaved": 4250 },
+      "symbol-read": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "batch-read": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "grep-progressive": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "git-compact": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "json-digest": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "spillover": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "batch-mutate": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "native-doc": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 }
+    }
+  },
+  "spills": [],
+  "jobs": [],
+  "activities": [
+    {
+      "id": "act-err-1",
+      "kind": "read",
+      "source": "agent",
+      "description": "Read .env.production",
+      "commandPreview": ".env.production",
+      "shell": "",
+      "cwd": "C:\\projects\\agy-pulse",
+      "status": "rejected",
+      "exitCode": null,
+      "errorCode": "CREDENTIAL_FENCE",
+      "durationMs": 2,
+      "startedAt": 1699999990000,
+      "endedAt": 1699999990002,
+      "outputPreview": "Blocked by credential fence: .env.production matches secret pattern.",
+      "sessionId": "conv-degraded-03",
+      "anomaly": true,
+      "acknowledged": false
+    },
+    {
+      "id": "act-err-2",
+      "kind": "exec",
+      "source": "agent",
+      "description": "npm run typecheck",
+      "commandPreview": "npm run typecheck",
+      "shell": "pwsh",
+      "cwd": "C:\\projects\\agy-pulse",
+      "status": "failed",
+      "exitCode": 2,
+      "durationMs": 3420,
+      "startedAt": 1699999920000,
+      "endedAt": 1699999923420,
+      "outputPreview": "error TS2305: Module has no exported member.",
+      "sessionId": "conv-degraded-03",
+      "anomaly": true,
+      "acknowledged": false
+    }
+  ]
+}

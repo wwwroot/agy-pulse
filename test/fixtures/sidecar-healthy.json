@@ -1,0 +1,261 @@
+{
+  "__now": 1700000120000,
+  "snapshotVersion": 1,
+  "seq": 42,
+  "workspaceRoots": ["C:\\projects\\agy-pulse"],
+  "primaryWorkspaceRoot": "C:\\projects\\agy-pulse",
+  "platform": "win32",
+  "daemonVersion": "1.0.0",
+  "workerAvailable": true,
+  "workerPath": "C:\\projects\\agy-pulse\\sidecars\\pulse\\dist\\agy-pulse-worker.exe",
+  "sessionId": "conv-healthy-01",
+  "sessionScope": "conversation",
+  "sessions": [],
+  "unreadAnomalies": 0,
+  "dedupEntryCount": 14,
+  "config": {
+    "defaultShell": "auto",
+    "defaultTimeoutMs": 30000,
+    "maxTimeoutMs": 165000,
+    "maxInlineBytes": 7800,
+    "maxSpillBytes": 10485760,
+    "autoPromoteOnTimeout": true,
+    "enableReadDedup": true,
+    "enableJsonDigest": true,
+    "enableCredentialFence": true,
+    "enableDownloadGuard": false,
+    "downloadGuardTemplate": "",
+    "spillRetentionDays": 7,
+    "spillMaxTotalMb": 256,
+    "sessionRetentionDays": 14,
+    "sessionMaxCount": 30
+  },
+  "shells": [
+    {
+      "id": "pwsh",
+      "label": "PowerShell 7",
+      "executable": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "version": "7.5.0",
+      "available": true,
+      "isDefault": true
+    },
+    {
+      "id": "git-bash",
+      "label": "Git Bash",
+      "executable": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "version": "5.2.26",
+      "available": true
+    }
+  ],
+  "contextWindow": {
+    "available": true,
+    "conversationId": "conv-healthy-01",
+    "model": "claude-sonnet-4-5",
+    "modelLabel": "Claude Sonnet 4.5",
+    "contextTokens": 76400,
+    "promptTokens": 74200,
+    "uncachedInputTokens": 8900,
+    "cacheReadTokens": 65300,
+    "lastOutputTokens": 2200,
+    "cacheHitPct": 88,
+    "contextLimit": 200000,
+    "limitEstimated": false,
+    "usagePct": 38.2,
+    "remainingTokens": 123600,
+    "peakContextTokens": 76400,
+    "totalOutputTokens": 18400,
+    "turnCount": 9,
+    "lastTurnDeltaTokens": 6200,
+    "updatedAt": 1700000000000,
+    "timeline": [
+      { "turn": 1, "contextTokens": 18200, "cacheReadTokens": 9400, "outputTokens": 1100, "ts": 1699999200000 },
+      { "turn": 3, "contextTokens": 34500, "cacheReadTokens": 28100, "outputTokens": 2300, "ts": 1699999450000 },
+      { "turn": 5, "contextTokens": 51900, "cacheReadTokens": 44200, "outputTokens": 1950, "ts": 1699999680000 },
+      { "turn": 7, "contextTokens": 66100, "cacheReadTokens": 57800, "outputTokens": 2400, "ts": 1699999860000 },
+      { "turn": 9, "contextTokens": 76400, "cacheReadTokens": 65300, "outputTokens": 2200, "ts": 1700000000000 }
+    ]
+  },
+  "quotas": {
+    "provider": "antigravity",
+    "fetchedAt": 1700000000000,
+    "source": "cli",
+    "warnings": [],
+    "pools": [
+      {
+        "id": "agy-gemini",
+        "name": "Gemini Models",
+        "windows": [
+          {
+            "kind": "short",
+            "label": "5h",
+            "remaining": 0.87,
+            "resetsAt": 1700009000000,
+            "periodHours": 5,
+            "projectedUnused": 0.14
+          },
+          {
+            "kind": "period",
+            "label": "7d",
+            "remaining": 0.62,
+            "resetsAt": 1700184800000,
+            "periodHours": 168,
+            "projectedUnused": 0.08
+          }
+        ]
+      },
+      {
+        "id": "agy-argon",
+        "name": "Gemini 4 Argon",
+        "windows": [
+          {
+            "kind": "period",
+            "label": "7d",
+            "remaining": 0.37,
+            "resetsAt": 1700184800000,
+            "periodHours": 168,
+            "projectedUnused": 0
+          }
+        ]
+      },
+      {
+        "id": "agy-3p",
+        "name": "Claude & GPT",
+        "windows": [
+          {
+            "kind": "period",
+            "label": "7d",
+            "remaining": 0.54,
+            "resetsAt": 1700141600000,
+            "periodHours": 168,
+            "projectedUnused": 0.11
+          }
+        ]
+      }
+    ]
+  },
+  "hostHealth": {
+    "checkedAt": 1700000000000,
+    "warnings": [],
+    "entries": [
+      {
+        "host": "Antigravity",
+        "configPath": "C:\\Users\\developer\\.gemini\\config\\mcp_config.json",
+        "status": "ok",
+        "detail": "Registered with 180s timeout",
+        "timeoutSeconds": 180,
+        "repairable": false
+      }
+    ]
+  },
+  "notices": [],
+  "telemetry": {
+    "totalCalls": 24,
+    "totalRawBytes": 642000,
+    "totalDeliveredBytes": 148000,
+    "totalSavedBytes": 494000,
+    "estimatedTokensSaved": 123500,
+    "roundTripsSaved": 11,
+    "dedupHits": 8,
+    "avgDurationMs": 28,
+    "byCategory": {
+      "read-dedup": { "calls": 8, "savedBytes": 196000, "estimatedTokensSaved": 49000 },
+      "outline-read": { "calls": 6, "savedBytes": 142000, "estimatedTokensSaved": 35500 },
+      "symbol-read": { "calls": 4, "savedBytes": 74000, "estimatedTokensSaved": 18500 },
+      "batch-read": { "calls": 3, "savedBytes": 32000, "estimatedTokensSaved": 8000 },
+      "grep-progressive": { "calls": 2, "savedBytes": 34000, "estimatedTokensSaved": 8500 },
+      "git-compact": { "calls": 1, "savedBytes": 16000, "estimatedTokensSaved": 4000 },
+      "json-digest": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "spillover": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "batch-mutate": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "native-doc": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 }
+    }
+  },
+  "spills": [
+    {
+      "refId": "spill-8f21a9",
+      "tool": "pulse_exec",
+      "description": "cargo test --workspace --all-targets",
+      "totalBytes": 48200,
+      "stdoutBytes": 47600,
+      "stderrBytes": 600,
+      "createdAt": 1699999880000,
+      "sessionId": "conv-healthy-01"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-401",
+      "description": "cargo build --release --manifest-path native/Cargo.toml",
+      "shell": "pwsh",
+      "cwd": "C:\\projects\\agy-pulse",
+      "commandPreview": "cargo build --release --manifest-path native/Cargo.toml",
+      "status": "running",
+      "exitCode": null,
+      "signal": null,
+      "startedAt": 1700000075000,
+      "durationMs": 45000,
+      "promotedFromForeground": true,
+      "stdoutBytes": 1420,
+      "stderrBytes": 0
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-101",
+      "kind": "exec",
+      "source": "agent",
+      "description": "Build release Rust worker",
+      "commandPreview": "cargo build --release --manifest-path native/Cargo.toml",
+      "shell": "pwsh",
+      "cwd": "C:\\projects\\agy-pulse",
+      "status": "running",
+      "exitCode": null,
+      "durationMs": 45000,
+      "startedAt": 1700000075000,
+      "jobId": "job-401",
+      "sessionId": "conv-healthy-01",
+      "anomaly": false,
+      "acknowledged": false
+    },
+    {
+      "id": "act-100",
+      "kind": "read",
+      "source": "agent",
+      "description": "Outline C:\\projects\\agy-pulse\\src\\client\\components\\ActivityView.tsx",
+      "commandPreview": "src/client/components/ActivityView.tsx (outline)",
+      "shell": "",
+      "cwd": "C:\\projects\\agy-pulse",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 14,
+      "startedAt": 1699999960000,
+      "endedAt": 1699999960014,
+      "savedBytes": 29400,
+      "estimatedTokensSaved": 7350,
+      "roundTripsSaved": 2,
+      "sessionId": "conv-healthy-01",
+      "anomaly": false,
+      "acknowledged": false
+    },
+    {
+      "id": "act-099",
+      "kind": "search",
+      "source": "agent",
+      "description": "grep formatRelativeAge in src/client",
+      "commandPreview": "grep formatRelativeAge src/client (definitions)",
+      "shell": "",
+      "cwd": "C:\\projects\\agy-pulse",
+      "status": "completed",
+      "exitCode": 0,
+      "durationMs": 19,
+      "startedAt": 1699999880000,
+      "endedAt": 1699999880019,
+      "refId": "spill-8f21a9",
+      "savedBytes": 42100,
+      "estimatedTokensSaved": 10525,
+      "sessionId": "conv-healthy-01",
+      "anomaly": false,
+      "acknowledged": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">agy-pulse</title>
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="#111114"/>
+  <rect x="10" y="10" width="236" height="236" rx="52" fill="none" stroke="#27272E" stroke-width="2"/>
+  <circle cx="128" cy="128" r="88" fill="#17171C"/>
+  <g>
+    <path fill="#3F3F46" d="M50 154L128 199V215L50 170V154Z"/>
+    <path fill="#27272A" d="M128 199L206 154V170L128 215V199Z"/>
+    <path fill="#52525B" d="M50 154L128 109L206 154L128 199L50 154Z"/>
+    <path fill="#EA580C" d="M60 119L138 164V180L60 135V119Z"/>
+    <path fill="#C2410C" d="M138 164L216 119V135L138 180V164Z"/>
+    <path fill="#FB923C" d="M60 119L138 74L216 119L138 164L60 119Z"/>
+    <path fill="#D4D4D8" d="M50 84L128 128V145L50 100V84Z"/>
+    <path fill="#A1A1AA" d="M128 128L206 84V100L128 145V128Z"/>
+    <path fill="#FAFAFA" d="M50 84L128 39L206 84L128 129L50 84Z"/>
+  </g>
+</svg>

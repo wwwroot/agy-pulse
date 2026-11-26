@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "pulse": {
+      "command": "node",
+      "args": ["${PLUGIN_ROOT}/sidecars/pulse/dist/mcp-server.mjs"],
+      "timeoutSeconds": 86400,
+      "env": {
+        "AGY_PULSE_DATA_DIR": "${PLUGIN_DATA}"
+      },
+      "tools": {
+        "pulse_read_files": { "eager": false },
+        "pulse_search": { "eager": false },
+        "pulse_mutate": { "eager": false },
+        "pulse_read_doc": { "eager": false },
+        "pulse_exec": { "eager": false },
+        "pulse_job": { "eager": false },
+        "pulse_result": { "eager": false }
+      }
+    }
+  }
+}

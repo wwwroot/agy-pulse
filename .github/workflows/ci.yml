@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Cargo artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            native/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('native/Cargo.lock', 'native/Cargo.toml') }}
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: TypeScript typecheck
+        run: npm run typecheck
+
+      - name: Build bundles and Rust worker
+        run: npm run build
+
+      - name: Run Rust unit tests
+        run: cargo test --manifest-path native/Cargo.toml
+
+      - name: Run Node test suite
+        run: npm test
+
+      - name: Run plugin doctor self-check
+        run: node scripts/install.mjs doctor --target=.
+
+      - name: Run quick stress benchmark
+        run: node scripts/stress-benchmark.mjs --quick

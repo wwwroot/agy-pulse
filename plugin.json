@@ -1,0 +1,15 @@
+{
+  "name": "agy-pulse",
+  "displayName": "Pulse",
+  "version": "1.0.0",
+  "description": "Native Rust workspace engine and per-conversation telemetry for Antigravity. Cuts token usage with parallel batch reads, outlines, targeted symbols, read deduplication, compact git, and spillover paging.",
+  "logo": "assets/logo.svg",
+  "author": {
+    "name": "agy-pulse"
+  },
+  "suggestedPrompts": [
+    "Open Pulse to inspect token savings and active jobs",
+    "Find symbol definitions across the repository and batch-read the matching files",
+    "Run the project tests with structured output and JSON digest"
+  ]
+}

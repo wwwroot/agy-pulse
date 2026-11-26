@@ -1,0 +1,163 @@
+{
+  "__now": 1700000120000,
+  "snapshotVersion": 1,
+  "seq": 88,
+  "workspaceRoots": ["C:\\projects\\agy-pulse"],
+  "primaryWorkspaceRoot": "C:\\projects\\agy-pulse",
+  "platform": "win32",
+  "daemonVersion": "1.0.0",
+  "workerAvailable": true,
+  "sessionId": "conv-near-full-02",
+  "sessionScope": "conversation",
+  "sessions": [],
+  "unreadAnomalies": 0,
+  "dedupEntryCount": 31,
+  "config": {
+    "defaultShell": "pwsh",
+    "defaultTimeoutMs": 30000,
+    "maxTimeoutMs": 165000,
+    "maxInlineBytes": 7800,
+    "maxSpillBytes": 10485760,
+    "autoPromoteOnTimeout": true,
+    "enableReadDedup": true,
+    "enableJsonDigest": true,
+    "enableCredentialFence": true,
+    "enableDownloadGuard": false,
+    "downloadGuardTemplate": "",
+    "spillRetentionDays": 7,
+    "spillMaxTotalMb": 256,
+    "sessionRetentionDays": 14,
+    "sessionMaxCount": 30
+  },
+  "shells": [
+    {
+      "id": "pwsh",
+      "label": "PowerShell 7",
+      "executable": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "version": "7.5.0",
+      "available": true,
+      "isDefault": true
+    }
+  ],
+  "contextWindow": {
+    "available": true,
+    "conversationId": "conv-near-full-02",
+    "model": "claude-opus-4-5",
+    "modelLabel": "Claude Opus 4.5",
+    "contextTokens": 177000,
+    "promptTokens": 173200,
+    "uncachedInputTokens": 21200,
+    "cacheReadTokens": 152000,
+    "lastOutputTokens": 3800,
+    "cacheHitPct": 88,
+    "contextLimit": 200000,
+    "limitEstimated": false,
+    "usagePct": 88.5,
+    "remainingTokens": 23000,
+    "peakContextTokens": 189400,
+    "totalOutputTokens": 62100,
+    "turnCount": 28,
+    "lastTurnDeltaTokens": -12400,
+    "updatedAt": 1700000000000,
+    "timeline": [
+      { "turn": 1, "contextTokens": 24000, "cacheReadTokens": 12000, "outputTokens": 1800, "ts": 1699995000000 },
+      { "turn": 8, "contextTokens": 92000, "cacheReadTokens": 81000, "outputTokens": 3200, "ts": 1699996200000 },
+      { "turn": 15, "contextTokens": 152000, "cacheReadTokens": 134000, "outputTokens": 2900, "ts": 1699997400000 },
+      { "turn": 20, "contextTokens": 189400, "cacheReadTokens": 165000, "outputTokens": 3400, "ts": 1699998500000 },
+      { "turn": 21, "contextTokens": 122000, "cacheReadTokens": 102000, "outputTokens": 2500, "ts": 1699998800000 },
+      { "turn": 25, "contextTokens": 158000, "cacheReadTokens": 138000, "outputTokens": 3100, "ts": 1699999400000 },
+      { "turn": 28, "contextTokens": 177000, "cacheReadTokens": 152000, "outputTokens": 3800, "ts": 1700000000000 }
+    ]
+  },
+  "quotas": {
+    "provider": "antigravity",
+    "fetchedAt": 1700000000000,
+    "source": "app",
+    "warnings": [],
+    "pools": [
+      {
+        "id": "agy-gemini",
+        "name": "Gemini Models",
+        "windows": [
+          {
+            "kind": "short",
+            "label": "5h",
+            "remaining": 0.14,
+            "resetsAt": 1700004500000,
+            "periodHours": 5,
+            "projectedUnused": 0
+          },
+          {
+            "kind": "period",
+            "label": "7d",
+            "remaining": 0.19,
+            "resetsAt": 1700184800000,
+            "periodHours": 168,
+            "projectedUnused": 0
+          }
+        ]
+      },
+      {
+        "id": "agy-3p",
+        "name": "Claude & GPT",
+        "windows": [
+          {
+            "kind": "period",
+            "label": "7d",
+            "remaining": 0.01,
+            "resetsAt": 1700090000000,
+            "periodHours": 168,
+            "projectedUnused": 0
+          }
+        ]
+      }
+    ]
+  },
+  "hostHealth": {
+    "checkedAt": 1700000000000,
+    "warnings": [],
+    "entries": [
+      {
+        "host": "Antigravity",
+        "configPath": "C:\\Users\\developer\\.gemini\\config\\mcp_config.json",
+        "status": "ok",
+        "detail": "Healthy",
+        "timeoutSeconds": 180,
+        "repairable": false
+      }
+    ]
+  },
+  "notices": [
+    {
+      "id": "context:high:conv-near-full-02",
+      "level": "warn",
+      "title": "Context window at 88.5%",
+      "detail": "Consider compacting or starting a fresh session soon."
+    }
+  ],
+  "telemetry": {
+    "totalCalls": 64,
+    "totalRawBytes": 2480000,
+    "totalDeliveredBytes": 410000,
+    "totalSavedBytes": 2070000,
+    "estimatedTokensSaved": 517500,
+    "roundTripsSaved": 29,
+    "dedupHits": 24,
+    "avgDurationMs": 22,
+    "byCategory": {
+      "read-dedup": { "calls": 24, "savedBytes": 920000, "estimatedTokensSaved": 230000 },
+      "outline-read": { "calls": 16, "savedBytes": 540000, "estimatedTokensSaved": 135000 },
+      "symbol-read": { "calls": 10, "savedBytes": 310000, "estimatedTokensSaved": 77500 },
+      "batch-read": { "calls": 8, "savedBytes": 160000, "estimatedTokensSaved": 40000 },
+      "grep-progressive": { "calls": 4, "savedBytes": 90000, "estimatedTokensSaved": 22500 },
+      "git-compact": { "calls": 2, "savedBytes": 50000, "estimatedTokensSaved": 12500 },
+      "json-digest": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "spillover": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "batch-mutate": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 },
+      "native-doc": { "calls": 0, "savedBytes": 0, "estimatedTokensSaved": 0 }
+    }
+  },
+  "spills": [],
+  "jobs": [],
+  "activities": []
+}
